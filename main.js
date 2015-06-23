@@ -30,6 +30,25 @@ for(var i = 0; i < userVolunteers; i++){
 	volunteerArray.push(volunteerObject);
 }
 
-console.log(victimArray[1]);
+var alertDisplay = function(){
+	var output = "";
+	output+=("In total, we have " + userVictims + " victims:\n");
+	for(var i = 0; i < userVictims; i++){
+		for(var key in victimArray[i]){
+			output +=  key + ": " + victimArray[i][key] + "\n";
+		}
+		output+= "\n";
+	}
+	output+=("Additionally, we have " + userVolunteers + " volunteers:\n");
+	for(var i = 0; i < userVolunteers; i++){
+		for(var key in volunteerArray[i]){
+			output += key + ": " + volunteerArray[i][key] + "\n";
+		}
+		output+="\n";
+	}
+	return output;
+}
+
+alert(alertDisplay());
 
 // alert("We've got a ton of people who need help and a ton of people willing to help.\nFirst of all, the victims:\nThere are " + userVictims + " victims.\nTheir info:\n" + victimArray[1] + victimArray[2]);
